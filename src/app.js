@@ -3,10 +3,12 @@ import "bootstrap";
 import "./style.css";
 
 window.onload = () => {
-  document.querySelector(".card").classList.add(generateRandomSuit());
-  document.querySelector(".card").innerHTML += generateRandomNumber();
+  const cardElement = document.querySelector(".card");
+  if (cardElement) {
+    cardElement.classList.add(generateRandomSuit());
+    cardElement.innerHTML = generateRandomNumber(); // Limpiamos y agregamos el número.
+  }
 };
-
 let generateRandomNumber = () => {
   let numbers = [
     "A",
